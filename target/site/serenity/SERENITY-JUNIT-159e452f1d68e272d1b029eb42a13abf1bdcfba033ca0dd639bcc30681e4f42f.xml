@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Automation testing using Screenplay pattern." skipped="0" tests="2" time="72.81" timestamp="2022-03-27 11:16:44"><testcase name="Fill a user registration form using all fields"/><testcase name="Fill out a user registration form using all fields except password"/></testsuite>
