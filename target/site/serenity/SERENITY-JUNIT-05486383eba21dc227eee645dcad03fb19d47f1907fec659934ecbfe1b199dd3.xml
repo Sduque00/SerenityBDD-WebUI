@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Yo como QA" skipped="2" tests="2" time="0.21" timestamp="2022-03-27 09:50:36"><testcase name="Solicitud exitosa"><skipped/></testcase><testcase name="Solicitud exitosa con archivo adjunto"><skipped/></testcase></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Yo como QA" skipped="0" tests="2" time="42.12" timestamp="2022-03-28 12:11:19"><testcase name="Solicitud exitosa"/><testcase name="Solicitud exitosa con archivo adjunto"/></testsuite>

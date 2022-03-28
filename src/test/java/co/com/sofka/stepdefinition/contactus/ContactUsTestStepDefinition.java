@@ -2,6 +2,7 @@ package co.com.sofka.stepdefinition.contactus;
 
 import co.com.sofka.exception.ValidationTextDoNotMatch;
 import co.com.sofka.stepdefinition.Setup;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,6 +10,7 @@ import io.cucumber.java.en.When;
 import static co.com.sofka.question.contactus.Contactus.contactUsValidation;
 import static co.com.sofka.task.contactus.BrowseToContactUs.browseToContactUs;
 import static co.com.sofka.task.contactus.FillContactUs.fillContactUs;
+import static co.com.sofka.task.contactus.FillContactUsWithUpload.fillContactUsWithUpload;
 import static co.com.sofka.task.landingpage.OpenLandingPage.openLandingPage;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -36,7 +38,7 @@ public class ContactUsTestStepDefinition extends Setup {
     }
 
     @When("el ingresa los campos del formulario y confirma la accion")
-    public void elIngresaLosCamposDelFormularioYConfirmaLaAccion(io.cucumber.datatable.DataTable dataTable) {
+    public void elIngresaLosCamposDelFormularioYConfirmaLaAccion(DataTable dataTable) {
         theActorInTheSpotlight().attemptsTo(
                 fillContactUs()
                         .usingTheCabecera(dataTable.row(0).get(1))
@@ -68,8 +70,14 @@ public class ContactUsTestStepDefinition extends Setup {
     }
 
     @When("el ingresa los campos del formulario, adjunta un archivo y confirma la accion")
-    public void elIngresaLosCamposDelFormularioAdjuntaUnArchivoYConfirmaLaAccion(io.cucumber.datatable.DataTable dataTable) {
+    public void elIngresaLosCamposDelFormularioAdjuntaUnArchivoYConfirmaLaAccion(DataTable dataTable) {
         theActorInTheSpotlight().attemptsTo(
+                fillContactUsWithUpload()
+                .usingTheCabecera(dataTable.row(0).get(1))
+                .usingTheEmail(dataTable.row(1).get(1))
+                .usingTheReferencia(dataTable.row(2).get(1))
+                .usingTheUbicacion(dataTable.row(3).get(1))
+                .usingTheMensaje(dataTable.row(4).get(1))
 
         );
 
@@ -77,7 +85,10 @@ public class ContactUsTestStepDefinition extends Setup {
 
     @Then("el usuario verá un mensaje exitoso en la pagina")
     public void elUsuarioVeráUnMensajeExitosoEnLaPagina() {
-
+        theActorInTheSpotlight().should(
+                seeThat(
+                        contactUsValidation(),equalTo(true)
+                ).orComplainWith(ValidationTextDoNotMatch.class)
+        );
     }
-
 }

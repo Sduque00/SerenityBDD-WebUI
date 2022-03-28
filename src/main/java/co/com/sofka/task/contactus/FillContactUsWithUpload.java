@@ -1,5 +1,6 @@
 package co.com.sofka.task.contactus;
 
+import co.com.sofka.interaction.Upload;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -50,6 +51,7 @@ public class FillContactUsWithUpload implements Task {
 
                 Enter.theValue(email).into(EMAIL),
                 Enter.theValue(referencia).into(ORDER),
+                Upload.archive(ubicacion),
 
                 Enter.theValue(mensaje).into(MESSAGE),
 

@@ -15,7 +15,7 @@ Feature: Yo como QA
         Then el usuario verá un mensaje exitoso
         Examples:
         |cabecera |email                  |referencia      |mensaje                                 |
-        |Webmaster|extraduke0000@gmail.com|fjghfgkfghjsdfsd|dsfhjdkjsfhj sdjfhdskfjhsdk fsdfsdjhf   |
+        |Webmaster|extraduke0000@gmail.com|referencia      |mensaje                                 |
 
     Scenario Outline: Solicitud exitosa con archivo adjunto
         When el usuario navega hasta el formulario de Contac us
@@ -27,8 +27,8 @@ Feature: Yo como QA
             |mensaje   |<mensaje>   |
         Then el usuario verá un mensaje exitoso en la pagina
         Examples:
-            |cabecera |email                  |referencia      |nombreArchivo|mensaje                                 |
-            |Webmaster|extraduke0000@gmail.com|fjghfgkfghjsdfsd|sd.txt       |dsfhjdkjsfhj sdjfhdskfjhsdk fsdfsdjhf   |
+            |cabecera |email                   |referencia    |nombreArchivo|mensaje                  |
+            |Webmaster|extraduke0000@gmail.com|referencia     |sd.txt       |mensaje                   |
 
 
 
