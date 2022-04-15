@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Yo como QA" skipped="0" tests="2" time="38.06" timestamp="2022-03-27 09:14:49"><testcase name="Inicio de sesion exitoso"/><testcase name="Inicio de sesion fallido por contraseña incorrecta"/></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Yo como QA" skipped="0" tests="2" time="148.52" timestamp="2022-03-28 02:34:33"><testcase name="Inicio de sesion exitoso"/><testcase name="Inicio de sesion fallido por contraseña incorrecta"/></testsuite>
